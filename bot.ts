@@ -1,5 +1,16 @@
 import { Telegraf } from 'telegraf'
 import 'dotenv/config'
+import express from 'express'
+
+const app = express()
+
+app.get('/', (_, res) => {
+  res.send('Bot alive')
+})
+
+app.listen(3000, () => {
+  console.log('🌐 Web alive')
+})
 
 type Expense = {
   name: string
